@@ -31,7 +31,7 @@ class Starship(FlightVehicle):
 class Airplane(FlightVehicle):
     pass
 
-class GroundVehicle(vehicle):
+class GroundVehicle(Vehicle):
     pass
 
 class Car(GroundVehicle):
