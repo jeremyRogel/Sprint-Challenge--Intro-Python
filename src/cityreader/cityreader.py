@@ -22,16 +22,18 @@ class City:
 #
 # Note that the first line of the CSV is header that describes the fields--this
 # should not be loaded into a City object.
-import csv
+
 
 cities = []
+
+import csv
 
 def cityreader(cities=[]):
   # TODO Implement the functionality to read from the 'cities.csv' file
   # For each city record, create a new City instance and add it to the 
   # `cities` list
-    with open('cities.csv', newLine='') as csvfile:
-      cityinfo = csv.reader(csvfile)
+    with open("src/cityreader/cities.csv", newLine="") as csvfile:
+      cityinfo = csv.DictReader(csvfile)
       next(cityinfo)
       for row in cityinfo:
         cities.append(City(row[0], float(row[3]), float(row[4])))
